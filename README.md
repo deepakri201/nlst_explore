@@ -1,1 +1,1 @@
-# Exploratory NLST analysis of TotalSegmentator results
+Exploratory NLST analysis of TotalSegmentator results
