@@ -23,3 +23,14 @@ Bokeh plots for the ones that had outliers:
 - [Eleventh rib](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/left_right_region_comparison/bokeh/Eleventh%20rib.html)
 - [Twelfth rib](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/left_right_region_comparison/bokeh/Twelfth%20rib.html)
 
+## Segmentation over time consistency 
+
+Violin plots of the stddev of the volumes within each patient.  We expect for some organs that these deviations would be small over time. 
+
+The pdf plots are [here](https://github.com/deepakri201/nlst_explore/tree/main/segmentation_over_time/pdf). 
+
+The bokeh plots are here: 
+- [Spleen](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/Spleen.html)
+- [Liver](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/Liver.html)
+- [L1 vertebra](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/L1%20vertebra.html)
+- [T7 vertebra](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/T7%20vertebra.html)
