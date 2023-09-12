@@ -35,6 +35,12 @@ The bokeh plots are here:
 - [L1 vertebra](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/L1%20vertebra.html)
 - [T7 vertebra](https://htmlpreview.github.io/?https://github.com/deepakri201/nlst_explore/blob/main/segmentation_over_time/bokeh/T7%20vertebra.html)
 
+## Organ volume comparison 
+
+In this [folder](https://github.com/deepakri201/nlst_explore/tree/main/organ_volume_comparison), there is a csv file, where for each vertebrae, the min and max deviation compared to the median is provided along with the OHIF url. 
+
+We can assess these outliers and compare the medians to literature. 
+
 ## Voxel volume vs mesh volume comparison (vertebrae for now)
 
 Bland-Altman and correlation plots of the voxel volume vs mesh volume for the vertebrae [here](https://github.com/deepakri201/nlst_explore/tree/main/voxel_vs_mesh_volume_comparison/pdf). 
