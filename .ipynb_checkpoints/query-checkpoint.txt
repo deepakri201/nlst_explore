@@ -1,0 +1,7 @@
+
+SELECT 
+  DISTINCT(CONCAT("cp s3://", SPLIT(gcs_url,"/")[SAFE_OFFSET(2)], "/", crdc_series_uuid, "/* .")) 
+FROM 
+    `bigquery-public-data.idc_current.dicom_all`
+WHERE 
+  SeriesInstanceUID = @series_id;
