@@ -119,32 +119,41 @@ DICOMUtils.importDicom(downloadDirectory,db)
 #-- Get the corresponding referenced series files --#
 #####################################################
 
-# read the file with pydicom 
+import subprocess
+output = subprocess.run(["gcloud", "auth", "application-default", "login"])
+print(output)
+# cmdCommand = "gcloud auth application-default login" 
+# process = subprocess.Popen(cmdCommand.split(), stdout=subprocess.PIPE)
+# output, error = process.communicate()
+# print(output)
+# print(error)
 
-# get the referenced SeriesInstanceUID 
-
-# use gsutil to download from the bucket 
-# can use s5cmd later 
-
-# Select all files from GCS for a given DICOM series
-
-client = bigquery.Client(project=project_id)
-
-query = f"""
-SELECT 
-  DISTINCT(CONCAT("cp s3://", SPLIT(gcs_url,"/")[SAFE_OFFSET(2)], "/", crdc_series_uuid, "/* .")) 
-FROM 
-    `bigquery-public-data.idc_current.dicom_all`
-WHERE 
-  SeriesInstanceUID = @series_id;
-"""
-
-job_config = bigquery.QueryJobConfig(query_parameters=[
-                                                       bigquery.ScalarQueryParameter("series_id", "STRING", seriesInstanceUID)
-                                                       ])
-result = client.query(query, job_config=job_config) 
-series_df = result.to_dataframe(create_bqstorage_client=True)
-print(series_df)
+# # read the file with pydicom 
+#
+# # get the referenced SeriesInstanceUID 
+#
+# # use gsutil to download from the bucket 
+# # can use s5cmd later 
+#
+# # Select all files from GCS for a given DICOM series
+#
+# client = bigquery.Client(project=project_id)
+#
+# query = f"""
+# SELECT 
+#   DISTINCT(CONCAT("cp s3://", SPLIT(gcs_url,"/")[SAFE_OFFSET(2)], "/", crdc_series_uuid, "/* .")) 
+# FROM 
+#     `bigquery-public-data.idc_current.dicom_all`
+# WHERE 
+#   SeriesInstanceUID = @series_id;
+# """
+#
+# job_config = bigquery.QueryJobConfig(query_parameters=[
+#                                                        bigquery.ScalarQueryParameter("series_id", "STRING", seriesInstanceUID)
+#                                                        ])
+# result = client.query(query, job_config=job_config) 
+# series_df = result.to_dataframe(create_bqstorage_client=True)
+# print(series_df)
 
 # client = bigquery.Client(project=project_id)
 #
